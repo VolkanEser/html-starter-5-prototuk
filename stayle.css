@@ -12,11 +12,15 @@ html body {
     font-size: 16px;
     max-height: 100%;
     font-family: Montserrat;
+    box-sizing: border-box;
 }
-.content{
+
+.content {
     max-width: 1200px;
     margin: 0 auto;
+
 }
+
 
 /* 
 
@@ -71,12 +75,16 @@ p {
 .header {
     height: 60px;
     background: #fff;
+    width: 98%;
     min-height: 60px;
+    margin-top: -9px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     border-bottom: 1px solid #ecf1f6;
+    position: fixed;
+    z-index: 1000;
 }
 
 .logo-wrapper {
@@ -117,6 +125,7 @@ p {
     font-size: 16px;
     font-weight: 500;
     border: none;
+    outline: none;
 }
 
 
@@ -136,30 +145,42 @@ p {
 .giris-yap a {
     text-decoration: none;
 }
+
 .giris-yap i {
     display: none;
 }
+
 .main {
     display: flex;
+    /* position: relative; */
     height: calc(100% - 60px);
+    /* justify-content: space-between; */
 }
 
 
 .sidebar.main-sidebar {
     width: 250px;
     min-width: 250px;
+    margin-top: 2rem;
     border-right: 1px solid #ecf1f6;
     padding: 10px 0;
     overflow-y: auto;
     overflow-x: hidden;
-    position: relative;
+    height: auto;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    transition: 300ms width, 300ms min-width;
+    max-height: 900px;
+    height: 92vh;
+
 
 }
 
+
 .nav {
     padding: 0 10px;
+
 
 }
 
@@ -185,6 +206,7 @@ p {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    margin-top: 8px;
 
 }
 
@@ -208,10 +230,12 @@ p {
 }
 
 
-.divler {
+.divider {
     margin: 20px 0;
     height: 1px;
-    background-color: #f3f6f9;
+    /* background-color: #f3f6f9;  */
+    border-bottom: 1px solid #f3f6f9;
+    ;
 }
 
 .nav-son {
@@ -264,18 +288,21 @@ p {
     text-decoration: none;
 }
 
-.content {
-    overflow: auto;
+.main .content {
+
     flex: 1;
     scroll-behavior: smooth;
     scroll-margin-block-start: -100px;
     padding: 25px 40px;
 
+
 }
 
 .content-inner {
-    max-width: 1200px;
+    max-width: 1912px;
     margin: 0 auto;
+    overflow: auto;
+    margin-left: 4rem;
 }
 
 .content-inner h3 {
@@ -515,7 +542,7 @@ p {
 }
 
 .noktalar {
-    
+
     text-align: center;
     font-size: 0;
 }
@@ -528,38 +555,48 @@ p {
     display: inline-block;
     border-radius: 50%;
     background: #32445a;
-  
+
 
 }
-.noktalar .az-kucuk{
+
+.noktalar .az-kucuk {
     background: #E2E9F1;
     width: 6px;
     height: 6px;
 }
-.noktalar .kucuk{
+
+.noktalar .kucuk {
     background: #E2E9F1;
     width: 4px;
     height: 4px;
 }
-.divider.big{
+
+.divider.big {
     margin: 40px 0;
-    border-bottom: 1px solid  #f3f6f9; /* Çizgi kalınlığı ve rengi */
+    border-bottom: 1px solid #f3f6f9;
+    /* Çizgi kalınlığı ve rengi */
 }
 
-.tiwitter{
+.tiwitter {
     padding: 20px 40px;
     border-radius: 4px;
     display: flex;
     align-items: center;
     background: #1da1f2;
 }
-.tiwitter i{
+
+.tiwitter.ins {
+    background: linear-gradient(to left, #405de6, #5851db, #833ab4, #e1306c);
+}
+
+.tiwitter i {
     font-size: 45px;
     color: #fff;
     margin-right: 50px;
     position: relative;
     z-index: 1;
 }
+
 .tiwitter span {
     content: "";
     width: 60px;
@@ -571,19 +608,22 @@ p {
     border-radius: 50%;
     z-index: -1;
 }
-.title{
+
+.title {
     font-size: 20px;
     font-weight: 500;
     color: #fff;
 }
-.tiwitter p{
+
+.tiwitter p {
     font-size: 16px;
     line-height: 1.5;
     color: rgba(255, 255, 255, .7);
     margin-bottom: 0;
     margin-top: 3px;
 }
-.tiwitter a{
+
+.tiwitter a {
     display: inline-flex;
     height: 40px;
     border-radius: 4px;
@@ -596,23 +636,27 @@ p {
     font-size: 14px;
     cursor: pointer;
 }
-.content h3{
+
+.content h3 {
     font-size: 30px;
     margin-bottom: 15px;
     color: #2b3548;
 }
-.content p{
+
+.content p {
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 15px;
 }
-.soru-cevap{
+
+.soru-cevap {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    text-decoration: none; 
+    text-decoration: none;
 }
-.kisiler{
+
+.kisiler {
     position: relative;
     width: 100%;
     height: 100%;
@@ -621,7 +665,8 @@ p {
     transition-property: transform;
     box-sizing: content-box;
 }
-.kisi{
+
+.kisi {
     width: 294.667px;
     margin-right: 30px;
     flex-shrink: 0;
@@ -629,7 +674,8 @@ p {
     position: relative;
     transition-property: transform;
 }
-.kisi a{
+
+.kisi a {
     display: flex;
     flex-direction: column;
     border: 1px solid #e2e9f1;
@@ -642,25 +688,29 @@ p {
 
 
 }
-.user{
+
+.user {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
-.user img{
+
+.user img {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     margin-right: 7px;
 }
-.name{
+
+.name {
     font-size: 14px;
     font-weight: 500;
     opacity: .7;
     color: #32445a;
-   
+
 }
-.titlle{
+
+.titlle {
     font-size: 18px;
     font-weight: 600;
     color: #32445a;
@@ -670,12 +720,13 @@ p {
     overflow: hidden;
     white-space: nowrap;
 }
-.time{
+
+.time {
     font-size: 14px;
     color: #11111180;
 }
 
-.golge{
+.golge {
     content: "";
     width: 90%;
     height: 90%;
@@ -688,10 +739,12 @@ p {
     border-radius: 4px;
     opacity: .1;
 }
-.noktalar.bosluk{
+
+.noktalar.bosluk {
     margin-top: 2rem;
 }
-.tayfunun-bolum{
+
+.tayfunun-bolum {
     position: relative;
     width: 100%;
     height: 100%;
@@ -703,22 +756,25 @@ p {
 
 }
 
-.time.top{
+.time.top {
     margin-top: 5px;
 }
-.tayfun{
+
+.tayfun {
     width: 450.5px;
 }
-.tayfun a{
+
+.tayfun a {
     display: flex;
-    flex-direction:  column;
+    flex-direction: column;
     border: 1px solid #e2e9f1;
     padding: 20px;
-text-decoration: none;
+    text-decoration: none;
 
     border-radius: 4px;
 }
-.receat{
+
+.receat {
     background: #61dafb;
     color: #fff;
     align-self: flex-start;
@@ -726,15 +782,223 @@ text-decoration: none;
     border-radius: 4px;
     margin-bottom: 10px;
 }
-.user img{
+
+.user img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
 }
-.user.top{
+
+.user.top {
     margin-top: 1rem;
 }
-.receat.top{
+
+.receat.top {
     color: black;
+}
+
+.receat.php {
+    background: #4f5b93;
+}
+
+
+.spartakus {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.sparta {
+    flex-shrink: 0;
+    width: 430px;
+
+
+    position: relative;
+    transition-property: transform;
+}
+
+.userr {
+    border: 1px solid #e2e9f1;
+    border-radius: 4px;
+}
+.userr a{
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.userr img {
+    width: 70px;
+    height: 70%;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.namee {
+    font-size: 16px;
+    font-weight: 600;
+    /* color: #32445a;
+     */
+    color: #32445a !important;
+}
+
+.userr span {
+    font-size: 14px;
+    color: #11111180;
+    margin-top: 3px;
+}
+
+.button.but {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    background: #32445a;
+  
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #32445a;
+}
+.button.but a{
+      color: #fff !important;
+}
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000cc;
+    z-index: 10000;
+    display: none;
+}
+
+.popup-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    min-width: 400px;
+    overflow: auto;
+    max-height: 100%;
+}
+
+.popup-titlle {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e9f1;
+}
+
+.popup-titlle h6 {
+    color: #2b3548;
+    font-size: 20px;
+    margin: 1.5rem;
+
+}
+
+.popup-titlle a {
+    color: #32445a;
+    font-size: 20px;
+    opacity: .5;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.popup-form li {
+    padding-bottom: 15px;
+    list-style: none;
+
+
+}
+
+.popup-form a {
+    text-decoration: none;
+    color: #32445a;
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    margin-top: 4px;
+}
+
+.popup-form li label {
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 6px;
+    color: #222;
+    display: block;
+}
+
+.popup-form li input {
+    width: 20rem;
+    height: 40px;
+    background: #f0f3f8;
+    padding: 0 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+}
+
+.popup-form li input:focus {
+    background: #edeff1;
+}
+
+.popup-form li button {
+    background: #32445a;
+    padding: 0 20px;
+    border-radius: 3px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+}
+
+.divider.oz {
+    /* margin: 1rem 1rem; */
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+}
+
+.toggle-btn {}
+
+
+
+.yukari {
+    display: none;
+    position: fixed;
+    /* Sabit konum */
+    bottom: 20px;
+    /* Alt mesafe */
+    right: 20px;
+    /* Sağ mesafe */
+    background-color: #007bff;
+    /* Buton rengi */
+    color: white;
+    /* Metin rengi */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.yukari:hover {
+    background-color: #0056b3;
 }
